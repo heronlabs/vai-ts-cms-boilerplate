@@ -15,6 +15,10 @@ jobs:
         run: yarn install --frozen-lockfile
         shell: bash
 
+      - name: '[TEST] | Lint Check'
+        run: yarn lint:check
+        shell: bash
+
       - name: '[BUILD] | Build Webpack'
         run: yarn build
         shell: bash
