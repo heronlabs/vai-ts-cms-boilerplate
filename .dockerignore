@@ -1,0 +1,14 @@
+# Bin
+.cache/
+.github/
+node_modules/
+dist/
+
+# Etc
+*.yml
+*.md
+
+# Env
+.env
+.env.*
+

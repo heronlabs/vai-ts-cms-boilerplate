@@ -1,0 +1,65 @@
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "description": "Project created to serve as a boilerplate for cms headless.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "lint:check": "gts lint",
+    "lint:fix": "gts fix",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile",
+    "docker:up:store": "docker-compose up -d store",
+    "docker:up:api": "docker-compose up -d api",
+    "docker:down": "docker-compose down --rmi all"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "eslint": "^8.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "gts": "^3.1.1",
+    "typescript": "4.4.3"
+  },
+  "dependencies": {
+    "@strapi/strapi": "4.6.1",
+    "@strapi/plugin-users-permissions": "4.6.1",
+    "@strapi/plugin-i18n": "4.6.1",
+    "@types/aws-lambda": "^8.10.106",
+    "aws-lambda": "^1.0.7",
+    "pg": "8.8.0",
+    "serverless-http": "^3.0.1"
+  },
+  "prettier": "gts/.prettierrc.json",
+  "eslintConfig": {
+    "extends": "./node_modules/gts/",
+    "plugins": [
+      "simple-import-sort"
+    ],
+    "rules": {
+      "node/no-unpublished-import": 0,
+      "simple-import-sort/exports": "error",
+      "simple-import-sort/imports": "error",
+      "@typescript-eslint/no-duplicate-imports": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
+      "max-classes-per-file": [
+        "error",
+        1
+      ]
+    },
+    "ignorePatterns": [
+      "node_modules/",
+      "dist/",
+      "*.js"
+    ]
+  }
+}
