@@ -14,7 +14,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile",
+    "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile.local",
     "docker:up:store": "docker-compose up -d store",
     "docker:up:api": "docker-compose up -d api",
     "docker:down": "docker-compose down --rmi all"
@@ -32,10 +32,7 @@
     "@strapi/strapi": "4.6.1",
     "@strapi/plugin-users-permissions": "4.6.1",
     "@strapi/plugin-i18n": "4.6.1",
-    "@types/aws-lambda": "^8.10.106",
-    "aws-lambda": "^1.0.7",
-    "pg": "8.8.0",
-    "serverless-http": "^3.0.1"
+    "pg": "8.8.0"
   },
   "prettier": "gts/.prettierrc.json",
   "eslintConfig": {

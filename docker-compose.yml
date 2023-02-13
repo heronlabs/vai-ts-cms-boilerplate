@@ -3,6 +3,7 @@ services:
   api:
     container_name: api
     build: .
+    dockerfile: ./Dockerfile.local
     image: strapi:latest
     restart: unless-stopped
     environment:
