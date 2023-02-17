@@ -16,8 +16,7 @@
     "strapi": "strapi",
     "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile.local",
     "docker:up:store": "docker-compose up -d store",
-    "docker:up:api": "docker-compose up -d api",
-    "docker:up:lambda": "docker-compose up -d lambda",
+    "docker:up:api": "docker-compose up -d cms-api",
     "docker:down": "docker-compose down --rmi all"
   },
   "devDependencies": {

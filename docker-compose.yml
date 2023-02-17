@@ -1,13 +1,13 @@
 version: '3'
 services:
-  api:
-    container_name: api
+  cms-api:
+    container_name: cms-api
     build:
       context: .
       dockerfile: ./Dockerfile.local
     restart: unless-stopped
     environment:
-      DATABASE_HOST: "store"
+      DATABASE_HOST: "cms-store"
       DATABASE_PORT: 5432
       DATABASE_NAME: "storeSandboxDB"
       DATABASE_USERNAME: "root"
@@ -15,44 +15,15 @@ services:
       APP_KEYS: "68Zgyzc6b51rjaUyFJYO4g==,3DwZKkLwyTH/SvAdKC+QIQ==,Vu/W8epSV3HA51BF8ngRUw==,uFL+iOrPT+cO4NgHLQgF0Q=="
       API_TOKEN_SALT: "sLH3abgEV37vPB+2CivdlQ=="
       ADMIN_JWT_SECRET: "CBVLkIjNjyMSJFeFVrDi2g=="
-    volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
-      - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
     ports:
       - '1337:1337'
     networks:
-      - cms
+      - cms-network
     depends_on:
-      - store
+      - cms-store
 
-  lambda:
-    container_name: lambda
-    build:
-      context: .
-      dockerfile: ./Dockerfile.api
-    restart: unless-stopped
-    environment:
-      DATABASE_HOST: "store"
-      DATABASE_PORT: 5432
-      DATABASE_NAME: "storeSandboxDB"
-      DATABASE_USERNAME: "root"
-      DATABASE_PASSWORD: "root"
-      APP_KEYS: "68Zgyzc6b51rjaUyFJYO4g==,3DwZKkLwyTH/SvAdKC+QIQ==,Vu/W8epSV3HA51BF8ngRUw==,uFL+iOrPT+cO4NgHLQgF0Q=="
-      API_TOKEN_SALT: "sLH3abgEV37vPB+2CivdlQ=="
-      ADMIN_JWT_SECRET: "CBVLkIjNjyMSJFeFVrDi2g=="
-    ports:
-      - '9000:8080'
-    networks:
-      - cms
-    depends_on:
-      - store
-
-  store:
-    container_name: store
+  cms-store:
+    container_name: cms-store
     platform: linux/amd64
     restart: unless-stopped
     image: postgres:12.0-alpine
@@ -65,13 +36,13 @@ services:
     ports:
       - '5432:5432'
     networks:
-      - cms
+      - cms-network
 
 volumes:
   postgres:
 
 
 networks:
-  cms:
+  cms-network:
     name: CMS
     driver: bridge
