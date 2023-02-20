@@ -4,9 +4,10 @@ services:
     container_name: cms-api
     build:
       context: .
-      dockerfile: ./Dockerfile.local
+      dockerfile: ./Dockerfile
     restart: unless-stopped
     environment:
+      NODE_ENV: development
       DATABASE_HOST: "cms-store"
       DATABASE_PORT: 5432
       DATABASE_NAME: "storeSandboxDB"
@@ -14,6 +15,7 @@ services:
       DATABASE_PASSWORD: "root"
       APP_KEYS: "68Zgyzc6b51rjaUyFJYO4g==,3DwZKkLwyTH/SvAdKC+QIQ==,Vu/W8epSV3HA51BF8ngRUw==,uFL+iOrPT+cO4NgHLQgF0Q=="
       API_TOKEN_SALT: "sLH3abgEV37vPB+2CivdlQ=="
+      JWT_SECRET: "C2tCDpH9aUDiqdP1iWaVaA=="
       ADMIN_JWT_SECRET: "CBVLkIjNjyMSJFeFVrDi2g=="
     ports:
       - '1337:1337'

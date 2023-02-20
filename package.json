@@ -14,7 +14,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile.local",
+    "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile",
     "docker:up:store": "docker-compose up -d store",
     "docker:up:api": "docker-compose up -d cms-api",
     "docker:down": "docker-compose down --rmi all"
@@ -31,6 +31,7 @@
   "dependencies": {
     "@strapi/plugin-i18n": "4.6.1",
     "@strapi/plugin-users-permissions": "4.6.1",
+    "@strapi/provider-upload-aws-s3": "^4.6.1",
     "@strapi/strapi": "4.6.1",
     "@types/aws-lambda": "^8.10.106",
     "aws-lambda": "^1.0.7",
