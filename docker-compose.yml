@@ -17,6 +17,13 @@ services:
       API_TOKEN_SALT: "sLH3abgEV37vPB+2CivdlQ=="
       JWT_SECRET: "C2tCDpH9aUDiqdP1iWaVaA=="
       ADMIN_JWT_SECRET: "CBVLkIjNjyMSJFeFVrDi2g=="
+      STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE: "pt-BR"
+    volumes:
+      - ./config:/app/config
+      - ./src:/app/src
+      - ./package.json:/package.json
+      - ./yarn.lock:/yarn.lock
+      - ./public/uploads:/app/public/uploads
     ports:
       - '1337:1337'
     networks:
