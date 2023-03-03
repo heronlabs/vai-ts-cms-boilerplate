@@ -13,15 +13,15 @@ export default ({env}) => ({
     config: {
       provider: 'nodemailer',
       providerOptions: {
-        host: env('AWS_EMAIL_ENDPOINT'),
+        host: env('AWS_SMTP_ENDPOINT'),
         auth: {
-          user: env('AWS_EMAIL_USER'),
-          pass: env('AWS_EMAIL_PASS'),
+          user: env('AWS_SMTP_USER'),
+          pass: env('AWS_SMTP_PASS'),
         },
       },
       settings: {
-        defaultFrom: env('AWS_EMAIL_ORIGIN'),
-        defaultReplyTo: env('AWS_EMAIL_ORIGIN'),
+        defaultFrom: env('AWS_SMTP_ORIGIN'),
+        defaultReplyTo: env('AWS_SMTP_ORIGIN'),
       },
     },
   },
