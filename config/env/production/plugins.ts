@@ -3,9 +3,6 @@ export default ({env}) => ({
     config: {
       provider: 'aws-s3',
       providerOptions: {
-        accessKeyId: env('AWS_ACCESS_KEY_ID'),
-        secretAccessKey: env('AWS_ACCESS_SECRET'),
-        region: env('AWS_REGION'),
         params: {
           Bucket: env('AWS_BUCKET_NAME'),
         },
@@ -14,11 +11,13 @@ export default ({env}) => ({
   },
   email: {
     config: {
-      provider: 'amazon-ses',
+      provider: 'nodemailer',
       providerOptions: {
-        key: env('AWS_ACCESS_KEY_ID'),
-        secret: env('AWS_ACCESS_SECRET'),
-        amazon: `https://email-smtp.${env('AWS_REGION')}.amazonaws.com`,
+        host: env('AWS_EMAIL_ENDPOINT'),
+        auth: {
+          user: env('AWS_EMAIL_USER'),
+          pass: env('AWS_EMAIL_PASS'),
+        },
       },
       settings: {
         defaultFrom: env('AWS_EMAIL_ORIGIN'),
