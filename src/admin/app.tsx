@@ -49,14 +49,14 @@ const colors = {
 export default {
   config: {
     auth: {
-      logo: 'https://public-static-heronlabs-sandbox.s3.amazonaws.com/images/logo-01.jpg',
+      logo: 'https://public-static-heronlabs-sandbox.s3.amazonaws.com/images/logo.jpg',
     },
     head: {
       favicon:
         'https://public-static-heronlabs-sandbox.s3.amazonaws.com/icons/favicon.ico',
     },
     menu: {
-      logo: 'https://public-static-heronlabs-sandbox.s3.amazonaws.com/images/logo-01.jpg',
+      logo: 'https://public-static-heronlabs-sandbox.s3.amazonaws.com/images/logo.jpg',
     },
     theme: {
       light: {

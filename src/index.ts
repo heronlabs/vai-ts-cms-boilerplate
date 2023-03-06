@@ -1,3 +1,5 @@
+import {setDefaultLocale} from './services/default-locale-service';
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -15,31 +17,6 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({strapi}) {
-    const ptBrCode = 'pt-BR';
-
-    const ptBrLocale = await strapi
-      .service('plugin::i18n.locales')
-      .findByCode(ptBrCode);
-
-    if (!ptBrLocale) {
-      await strapi.query('plugin::i18n.locale').createMany({
-        data: [
-          {
-            name: 'Portuguese (Brazil) (pt-BR)',
-            code: ptBrCode,
-          },
-        ],
-      });
-    }
-
-    await strapi
-      .store({
-        type: 'plugin',
-        name: 'i18n',
-      })
-      .set({
-        key: 'default_locale',
-        value: ptBrCode,
-      });
+    await setDefaultLocale({strapi});
   },
 };
