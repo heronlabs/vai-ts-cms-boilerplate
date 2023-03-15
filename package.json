@@ -15,7 +15,7 @@
     "build": "strapi build",
     "strapi": "strapi",
     "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile",
-    "docker:up:store": "docker-compose up -d store",
+    "docker:up:store": "docker-compose up -d cms-store",
     "docker:up:api": "docker-compose up -d cms-api",
     "docker:down": "docker-compose down --rmi all"
   },
