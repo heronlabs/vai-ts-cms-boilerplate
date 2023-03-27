@@ -1,16 +1,10 @@
 {
-  "kind": "collectionType",
-  "collectionName": "social_medias",
+  "collectionName": "components_social_medias_social_medias",
   "info": {
-    "singularName": "social-media",
-    "pluralName": "social-medias",
-    "displayName": "Social Media",
+    "displayName": "social Medias",
     "description": ""
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
     "name": {
       "type": "enumeration",
@@ -28,7 +22,7 @@
       ],
       "required": true
     },
-    "link": {
+    "url": {
       "type": "string",
       "required": true
     }

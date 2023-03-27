@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_signatures",
+  "info": {
+    "singularName": "email-signature",
+    "pluralName": "email-signatures",
+    "displayName": "Email Signature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employeeName": {
+      "type": "string",
+      "required": true
+    },
+    "employeeTitle": {
+      "type": "string",
+      "required": true
+    },
+    "employeeDescription": {
+      "type": "text",
+      "required": true
+    },
+    "toEmail": {
+      "type": "email",
+      "required": true
+    },
+    "subject": {
+      "type": "string",
+      "required": true
+    },
+    "companyName": {
+      "type": "string",
+      "required": true
+    },
+    "companyDescription": {
+      "type": "text",
+      "required": true
+    },
+    "companySocialMedias": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social-medias.social-medias",
+      "required": true
+    }
+  }
+}
