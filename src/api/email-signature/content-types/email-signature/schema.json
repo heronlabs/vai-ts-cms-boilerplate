@@ -45,6 +45,9 @@
       "repeatable": true,
       "component": "social-medias.social-medias",
       "required": true
+    },
+    "currentVersion": {
+      "type": "integer"
     }
   }
 }
