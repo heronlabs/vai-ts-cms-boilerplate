@@ -37,7 +37,7 @@
       "type": "component",
       "repeatable": true,
       "component": "social-medias.social-medias",
-      "required": true,
+      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
