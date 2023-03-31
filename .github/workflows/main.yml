@@ -1,8 +1,8 @@
 name: Build CMS Stack
 
 on:
-  - push
   - workflow_dispatch
+  - push
 
 jobs:
   pipeline:
@@ -19,6 +19,6 @@ jobs:
         run: yarn lint:check
         shell: bash
 
-      - name: '[BUILD] | Build Webpack'
+      - name: '[BUILD] | Build'
         run: yarn build
         shell: bash
