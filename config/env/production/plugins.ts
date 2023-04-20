@@ -3,8 +3,8 @@ export default ({env}) => ({
     config: {
       provider: 'aws-s3',
       providerOptions: {
-        accessKeyId: env('AWS_ACCESS_KEY_ID', ''),
-        secretAccessKey: env('AWS_ACCESS_SECRET', ''),
+        accessKeyId: env('AWS_BUCKET_USER', ''),
+        secretAccessKey: env('AWS_BUCKET_PASS', ''),
         region: env('AWS_REGION', ''),
         params: {
           Bucket: env('AWS_BUCKET_NAME'),
