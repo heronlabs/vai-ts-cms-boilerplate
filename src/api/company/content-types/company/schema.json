@@ -25,14 +25,6 @@
         }
       }
     },
-    "keyWords": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "socialMedias": {
       "type": "component",
       "repeatable": true,

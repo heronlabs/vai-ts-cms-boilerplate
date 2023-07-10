@@ -18,7 +18,8 @@
         "medium",
         "github",
         "discord",
-        "website"
+        "website",
+        "pinterest"
       ],
       "required": true
     },
