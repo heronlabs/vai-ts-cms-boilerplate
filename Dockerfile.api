@@ -13,7 +13,8 @@ RUN apk update && apk upgrade && \
   libpng-dev \
   nasm \
   bash \
-  vips-dev
+  vips-dev \
+  aws-cli
 
 WORKDIR /app
 
@@ -26,4 +27,4 @@ RUN wget https://github.com/heronlabs/aws-env/raw/master/bin/aws-env-linux-amd64
   && yarn cache clean \
   && yarn build
 
-ENTRYPOINT [ "sh", "/app/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "/app/entry-point.sh" ]
