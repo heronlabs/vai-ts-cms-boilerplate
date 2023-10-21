@@ -71,11 +71,6 @@ export default {
     tutorials: false,
     locales: ['pt-BR'],
     translations: {
-      en: {
-        'app.components.LeftMenu.navbrand.title': 'my-project',
-        'Auth.form.welcome.title': 'Welcome!',
-        'Auth.form.welcome.subtitle': 'Log in',
-      },
       'pt-BR': {
         'app.components.LeftMenu.navbrand.title': 'my-project',
         'Auth.form.welcome.title': 'Bem-vindo(a)!',

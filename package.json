@@ -1,5 +1,5 @@
 {
-  "name": "my-project",
+  "name": "@sandbox/api-cms",
   "version": "0.1.0",
   "description": "Project created to serve as a boilerplate for cms headless.",
   "license": "MIT",
@@ -14,10 +14,11 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "docker:build": "docker build -t my-project-cms:latest . -f Dockerfile",
-    "docker:up:store": "docker-compose up -d my-project-cms-store",
-    "docker:up:api": "docker-compose up -d my-project-cms-api --build --force-recreate",
-    "docker:down": "docker-compose down --rmi all"
+    "docker:build": "docker build -t sandbox-cms-api:latest . -f Dockerfile",
+    "docker:up:store": "docker-compose up -d sandbox-cms-store",
+    "docker:up:api": "docker-compose up -d sandbox-cms-api --build --force-recreate",
+    "docker:down": "docker-compose down --rmi all",
+    "template:forgotEmail": "ts-node ./templates-html/forgot-password.ts"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.38.0",
@@ -33,12 +34,11 @@
     "@strapi/plugin-users-permissions": "4.11.2",
     "@strapi/provider-email-nodemailer": "^4.11.3",
     "@strapi/provider-upload-aws-s3": "^4.6.1",
-    "@strapi/strapi": "^4.11.4",
-    "@types/aws-lambda": "^8.10.106",
-    "aws-lambda": "^1.0.7",
+    "@strapi/strapi": "4.14.5",
     "pg": "8.8.0",
     "reflect-metadata": "^0.1.13",
-    "serverless-http": "^3.1.1"
+    "serverless-http": "^3.1.1",
+    "ts-node": "^10.9.1"
   },
   "prettier": "gts/.prettierrc.json",
   "eslintConfig": {

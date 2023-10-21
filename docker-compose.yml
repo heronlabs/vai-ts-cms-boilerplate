@@ -1,14 +1,14 @@
 version: '3'
 services:
-  myproject-cms-api:
-    container_name: myproject-cms-api
+  sandbox-cms-api:
+    container_name: sandbox-cms-api
     build:
       context: .
       dockerfile: ./Dockerfile.local
     restart: unless-stopped
     environment:
       NODE_ENV: development
-      DATABASE_HOST: "myproject-cms-store"
+      DATABASE_HOST: "sandbox-cms-store"
       DATABASE_PORT: 5432
       DATABASE_NAME: "storeSandboxDB"
       DATABASE_USERNAME: "root"
@@ -27,12 +27,12 @@ services:
     ports:
       - '1337:1337'
     networks:
-      - myproject-cms-network
+      - sandbox-cms-network
     depends_on:
-      - myproject-cms-store
+      - sandbox-cms-store
 
-  myproject-cms-store:
-    container_name: myproject-cms-store
+  sandbox-cms-store:
+    container_name: sandbox-cms-store
     platform: linux/amd64
     restart: unless-stopped
     image: postgres:12.0-alpine
@@ -45,13 +45,13 @@ services:
     ports:
       - '5432:5432'
     networks:
-      - myproject-cms-network
+      - sandbox-cms-network
 
 volumes:
   postgres:
 
 
 networks:
-  myproject-cms-network:
-    name: myproject-cms
+  sandbox-cms-network:
+    name: sandbox-cms
     driver: bridge

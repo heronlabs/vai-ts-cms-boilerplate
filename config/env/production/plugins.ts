@@ -1,4 +1,7 @@
+import {plugins} from '../../common-plugins';
+
 export default ({env}) => ({
+  ...plugins({env}),
   upload: {
     config: {
       provider: 'aws-s3',
