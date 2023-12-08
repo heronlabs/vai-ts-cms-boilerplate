@@ -1,12 +1,12 @@
 {
-  "name": "@sandbox/api-cms",
-  "version": "0.1.0",
+  "name": "my-project",
+  "version": "0.0.0",
   "description": "Project created to serve as a boilerplate for cms headless.",
   "license": "MIT",
   "scripts": {
     "build": "strapi build",
     "develop": "strapi develop",
-    "docker:build": "docker build -t sandbox-cms-api:latest . -f Dockerfile",
+    "docker:build": "docker build -t sandbox-cms-api:latest . -f Dockerfile.local",
     "docker:down": "docker-compose down --rmi all",
     "docker:up:api": "docker-compose up -d sandbox-cms-api --build --force-recreate",
     "docker:up:store": "docker-compose up -d sandbox-cms-store",
@@ -41,15 +41,19 @@
     ]
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.11.1",
-    "@strapi/plugin-users-permissions": "4.11.2",
-    "@strapi/provider-email-nodemailer": "^4.11.3",
-    "@strapi/provider-upload-aws-s3": "^4.6.1",
-    "@strapi/strapi": "4.15.0",
+    "@strapi/plugin-i18n": "^4.15.5",
+    "@strapi/plugin-users-permissions": "^4.15.5",
+    "@strapi/provider-email-nodemailer": "^4.15.5",
+    "@strapi/provider-upload-aws-s3": "^4.15.5",
+    "@strapi/strapi": "^4.15.5",
     "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^5.2.0",
     "reflect-metadata": "^0.1.13",
-    "strapi-plugin-populate-deep": "^3.0.0",
-    "strapi-plugin-slugify": "2.3.5"
+    "strapi-plugin-populate-deep": "^3.0.1",
+    "strapi-plugin-slugify": "2.3.8",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.38.0",

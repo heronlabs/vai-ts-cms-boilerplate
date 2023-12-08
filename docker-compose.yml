@@ -18,6 +18,7 @@ services:
       JWT_SECRET: "C2tCDpH9aUDiqdP1iWaVaA=="
       ADMIN_JWT_SECRET: "CBVLkIjNjyMSJFeFVrDi2g=="
       STRAPI_PLUGIN_I18N_INIT_LOCALE_CODE: "pt-BR"
+      STRAPI_TELEMETRY_DISABLED: true
     volumes:
       - ./config:/app/config
       - ./src:/app/src
