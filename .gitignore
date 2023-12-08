@@ -114,3 +114,7 @@ dist
 build
 .strapi-updater.json
 .strapi
+
+
+# Templates HTML
+templates-html/*.html
